@@ -1,5 +1,5 @@
 {
-  "name": "toTsName",
+  "name": "migrate-ts-namespace",
   "version": "1.0.0",
   "bin": {
     "migrate-ts-namespace": "index.js"
