@@ -52,7 +52,7 @@ const startWithLowerCase = function(id) {
         .replace(new RegExp(`{!${id}`, 'g'), `{!${idLower}.${id}`)
         .replace(new RegExp(`{${id}`, 'g'), `{${idLower}.${id}`);
   }).then(data => pify(fs.writeFile)(outPath, data))
-      .catch(e => {
-        console.error(e)
+      .catch(err => {
+        console.error(err);
       });
 })();
