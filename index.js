@@ -51,7 +51,5 @@ const startWithLowerCase = function(id) {
     return data.replace(`${id} = goog.require('${ns}'`, `${idLower} = goog.require('${tsNs}'`)
         .replace(new RegExp(`{!${id}`, 'g'), `{!${idLower}.${id}`)
         .replace(new RegExp(`{${id}`, 'g'), `{${idLower}.${id}`);
-  }).then(data => {
-    return pify(fs.writeFile)(outPath, data);
-  });
+  }).then(data => pify(fs.writeFile)(outPath, data));
 })();
