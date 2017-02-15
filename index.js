@@ -43,8 +43,9 @@ const startWithLowerCase = function(id) {
     const id = match[1];
     const idLower = startWithLowerCase(id);
 
-    // Is this a module?
-    if (id.toLowerCase().endsWith('module')) {
+    // Is this a module or a controller?
+    let idAllLower = id.toLowerCase();
+    if (idAllLower.endsWith('module') || idAllLower.endsWith('controller')) {
       data = data.replace(`${id}.name`, `${idLower}.${idLower}.name`);
     }
 
